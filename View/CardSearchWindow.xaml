@@ -1,0 +1,77 @@
+﻿<Window x:Class="MTGCardSearch.View.CardSearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MTGCardSearch.View"
+        xmlns:vm="clr-namespace:MTGCardSearch.ViewModel"
+        xmlns:uc="clr-namespace:MTGCardSearch.View.UserControls"
+        mc:Ignorable="d"
+        Title="Magic the Gathering Card Search" Height="550" Width="800"
+        Icon="/View/MTGIcon.ico">
+
+    <Window.Resources>
+        <vm:CardSearchVM x:Key="vm"/>
+    </Window.Resources>
+
+    <DockPanel DataContext="{StaticResource vm}">
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="{Binding StatusBarText}"/>
+            </StatusBarItem>
+        </StatusBar>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0"
+                    Margin="5, 5, 2.5, 0">
+                <TextBlock Text="Search for a card by name:"/>
+                <TextBox Text="{Binding Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.InputBindings>
+                        <KeyBinding Command="{Binding SearchCommand}"
+                                    CommandParameter="{Binding Query}"
+                                    Key="Return"/>
+                    </TextBox.InputBindings>
+                </TextBox>
+                <Button Margin="0, 10"
+                    Content="Search"
+                    Command="{Binding SearchCommand}"
+                    CommandParameter="{Binding Query}"/>
+            </StackPanel>
+
+            <ListView Grid.Column="1"
+                      Margin="2.5, 5, 2.5, 0"
+                      ItemsSource="{Binding Cards}"
+                      SelectedValue="{Binding SelectedCard}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <uc:ResultListItem Card="{Binding}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ScrollViewer Grid.Column="2"
+                          HorizontalAlignment="Right"
+                          Margin="2.5, 5, 5, 0">
+                <StackPanel Margin="0, 0, 5, 0">
+                    <Image Source="{Binding CardImageUrl}"
+                           Width="211"/>
+                    <TextBlock Text="{Binding SelectedCard.name}"
+                               FontSize="14"
+                               FontWeight="Bold"/>
+                    <TextBlock Text="{Binding SelectedCard.type}"
+                               FontSize="11"
+                               FontWeight="Bold"/>
+                    <TextBlock Text="{Binding SelectedCard.text}"
+                               TextWrapping="Wrap"
+                               Margin="0, 5"/>
+                </StackPanel>
+            </ScrollViewer>
+            
+        </Grid>
+    </DockPanel>
+</Window>

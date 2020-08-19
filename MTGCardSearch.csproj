@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>MTGIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="View\MTGCardBack.png" />
+    <None Remove="View\MTGIcon.ico" />
+    <None Remove="View\UserControls\Icons\0.jfif" />
+    <None Remove="View\UserControls\Icons\1.jfif" />
+    <None Remove="View\UserControls\Icons\10.jfif" />
+    <None Remove="View\UserControls\Icons\11.jfif" />
+    <None Remove="View\UserControls\Icons\12.jfif" />
+    <None Remove="View\UserControls\Icons\13.jfif" />
+    <None Remove="View\UserControls\Icons\14.jfif" />
+    <None Remove="View\UserControls\Icons\15.jfif" />
+    <None Remove="View\UserControls\Icons\16.jfif" />
+    <None Remove="View\UserControls\Icons\2.jfif" />
+    <None Remove="View\UserControls\Icons\3.jfif" />
+    <None Remove="View\UserControls\Icons\4.jfif" />
+    <None Remove="View\UserControls\Icons\5.jfif" />
+    <None Remove="View\UserControls\Icons\6.jfif" />
+    <None Remove="View\UserControls\Icons\7.jfif" />
+    <None Remove="View\UserControls\Icons\8.jfif" />
+    <None Remove="View\UserControls\Icons\9.jfif" />
+    <None Remove="View\UserControls\Icons\b.jfif" />
+    <None Remove="View\UserControls\Icons\g.jfif" />
+    <None Remove="View\UserControls\Icons\r.jfif" />
+    <None Remove="View\UserControls\Icons\tap.jfif" />
+    <None Remove="View\UserControls\Icons\u.jfif" />
+    <None Remove="View\UserControls\Icons\untap.jfif" />
+    <None Remove="View\UserControls\Icons\w.jfif" />
+    <None Remove="View\UserControls\Icons\x.jfif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\MTGCardBack.png" />
+    <Resource Include="View\MTGIcon.ico" />
+    <Resource Include="View\UserControls\Icons\0.jfif" />
+    <Resource Include="View\UserControls\Icons\1.jfif" />
+    <Resource Include="View\UserControls\Icons\10.jfif" />
+    <Resource Include="View\UserControls\Icons\11.jfif" />
+    <Resource Include="View\UserControls\Icons\12.jfif" />
+    <Resource Include="View\UserControls\Icons\13.jfif" />
+    <Resource Include="View\UserControls\Icons\14.jfif" />
+    <Resource Include="View\UserControls\Icons\15.jfif" />
+    <Resource Include="View\UserControls\Icons\16.jfif" />
+    <Resource Include="View\UserControls\Icons\2.jfif" />
+    <Resource Include="View\UserControls\Icons\3.jfif" />
+    <Resource Include="View\UserControls\Icons\4.jfif" />
+    <Resource Include="View\UserControls\Icons\5.jfif" />
+    <Resource Include="View\UserControls\Icons\6.jfif" />
+    <Resource Include="View\UserControls\Icons\7.jfif" />
+    <Resource Include="View\UserControls\Icons\8.jfif" />
+    <Resource Include="View\UserControls\Icons\9.jfif" />
+    <Resource Include="View\UserControls\Icons\b.jfif" />
+    <Resource Include="View\UserControls\Icons\g.jfif" />
+    <Resource Include="View\UserControls\Icons\r.jfif" />
+    <Resource Include="View\UserControls\Icons\tap.jfif" />
+    <Resource Include="View\UserControls\Icons\u.jfif" />
+    <Resource Include="View\UserControls\Icons\untap.jfif" />
+    <Resource Include="View\UserControls\Icons\w.jfif" />
+    <Resource Include="View\UserControls\Icons\x.jfif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>
