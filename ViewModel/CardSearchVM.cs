@@ -79,7 +79,7 @@ namespace MTGCardSearch.ViewModel
             {
                 Cards.Add(new Card()
                 {
-                    name = "Okina, Temple to the Mommas",
+                    name = "Okina, Temple to the Grandfathers",
                     manaCost = "{3}{W}{W}"
                 });
             }

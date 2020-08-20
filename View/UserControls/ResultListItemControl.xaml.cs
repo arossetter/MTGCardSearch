@@ -19,8 +19,6 @@ namespace MTGCardSearch.View.UserControls
     /// </summary>
     public partial class ResultListItem : UserControl
     {
-
-
         public Card Card
         {
             get { return (Card)GetValue(CardProperty); }
@@ -39,7 +37,7 @@ namespace MTGCardSearch.View.UserControls
             {
                 item.cardNameTextBlock.Text = (e.NewValue as Card).name;
 
-                // TODO: Get list of images from Card's mana cost.
+                // Get list of image files from Card's mana cost.
                 List<string> manaCostList = GetManaCostFromText((e.NewValue as Card).manaCost);
                 for(int i = 0; i < manaCostList.Count; ++i)
                 {
@@ -57,6 +55,7 @@ namespace MTGCardSearch.View.UserControls
             if(!string.IsNullOrWhiteSpace(manaCost))
             {
                 // Parse manaCost, grabbing all values between curly brackets { } and saving off as images.
+                manaCost = manaCost.Replace("/", "");
                 char[] separators = { '{', '}' };
                 string[] icons = manaCost.Split(separators);
 
@@ -64,8 +63,7 @@ namespace MTGCardSearch.View.UserControls
                 {
                     if (!string.IsNullOrWhiteSpace(icon))
                     {
-                        string iconClean = icon.Replace("/", "");
-                        iconList.Add(string.Format(iconString, iconClean));
+                        iconList.Add(string.Format(iconString, icon));
                     }
                 }
             }
