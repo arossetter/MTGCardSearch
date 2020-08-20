@@ -20,6 +20,11 @@
     <None Remove="View\UserControls\Icons\15.jfif" />
     <None Remove="View\UserControls\Icons\16.jfif" />
     <None Remove="View\UserControls\Icons\2.jfif" />
+    <None Remove="View\UserControls\Icons\2b.jfif" />
+    <None Remove="View\UserControls\Icons\2g.jfif" />
+    <None Remove="View\UserControls\Icons\2r.jfif" />
+    <None Remove="View\UserControls\Icons\2u.jfif" />
+    <None Remove="View\UserControls\Icons\2w.jfif" />
     <None Remove="View\UserControls\Icons\3.jfif" />
     <None Remove="View\UserControls\Icons\4.jfif" />
     <None Remove="View\UserControls\Icons\5.jfif" />
@@ -28,12 +33,28 @@
     <None Remove="View\UserControls\Icons\8.jfif" />
     <None Remove="View\UserControls\Icons\9.jfif" />
     <None Remove="View\UserControls\Icons\b.jfif" />
+    <None Remove="View\UserControls\Icons\bg.jfif" />
+    <None Remove="View\UserControls\Icons\bp.jfif" />
+    <None Remove="View\UserControls\Icons\br.jfif" />
+    <None Remove="View\UserControls\Icons\c.jfif" />
     <None Remove="View\UserControls\Icons\g.jfif" />
+    <None Remove="View\UserControls\Icons\gp.jfif" />
+    <None Remove="View\UserControls\Icons\gu.jfif" />
+    <None Remove="View\UserControls\Icons\gw.jfif" />
+    <None Remove="View\UserControls\Icons\q.jfif" />
     <None Remove="View\UserControls\Icons\r.jfif" />
-    <None Remove="View\UserControls\Icons\tap.jfif" />
+    <None Remove="View\UserControls\Icons\rg.jfif" />
+    <None Remove="View\UserControls\Icons\rp.jfif" />
+    <None Remove="View\UserControls\Icons\rw.jfif" />
+    <None Remove="View\UserControls\Icons\t.jfif" />
     <None Remove="View\UserControls\Icons\u.jfif" />
-    <None Remove="View\UserControls\Icons\untap.jfif" />
+    <None Remove="View\UserControls\Icons\ub.jfif" />
+    <None Remove="View\UserControls\Icons\up.jfif" />
+    <None Remove="View\UserControls\Icons\ur.jfif" />
     <None Remove="View\UserControls\Icons\w.jfif" />
+    <None Remove="View\UserControls\Icons\wb.jfif" />
+    <None Remove="View\UserControls\Icons\wp.jfif" />
+    <None Remove="View\UserControls\Icons\wu.jfif" />
     <None Remove="View\UserControls\Icons\x.jfif" />
   </ItemGroup>
 
@@ -50,6 +71,11 @@
     <Resource Include="View\UserControls\Icons\15.jfif" />
     <Resource Include="View\UserControls\Icons\16.jfif" />
     <Resource Include="View\UserControls\Icons\2.jfif" />
+    <Resource Include="View\UserControls\Icons\2b.jfif" />
+    <Resource Include="View\UserControls\Icons\2g.jfif" />
+    <Resource Include="View\UserControls\Icons\2r.jfif" />
+    <Resource Include="View\UserControls\Icons\2u.jfif" />
+    <Resource Include="View\UserControls\Icons\2w.jfif" />
     <Resource Include="View\UserControls\Icons\3.jfif" />
     <Resource Include="View\UserControls\Icons\4.jfif" />
     <Resource Include="View\UserControls\Icons\5.jfif" />
@@ -58,12 +84,28 @@
     <Resource Include="View\UserControls\Icons\8.jfif" />
     <Resource Include="View\UserControls\Icons\9.jfif" />
     <Resource Include="View\UserControls\Icons\b.jfif" />
+    <Resource Include="View\UserControls\Icons\bg.jfif" />
+    <Resource Include="View\UserControls\Icons\bp.jfif" />
+    <Resource Include="View\UserControls\Icons\br.jfif" />
+    <Resource Include="View\UserControls\Icons\c.jfif" />
     <Resource Include="View\UserControls\Icons\g.jfif" />
+    <Resource Include="View\UserControls\Icons\gp.jfif" />
+    <Resource Include="View\UserControls\Icons\gu.jfif" />
+    <Resource Include="View\UserControls\Icons\gw.jfif" />
     <Resource Include="View\UserControls\Icons\r.jfif" />
-    <Resource Include="View\UserControls\Icons\tap.jfif" />
+    <Resource Include="View\UserControls\Icons\rg.jfif" />
+    <Resource Include="View\UserControls\Icons\rp.jfif" />
+    <Resource Include="View\UserControls\Icons\rw.jfif" />
+    <Resource Include="View\UserControls\Icons\t.jfif" />
     <Resource Include="View\UserControls\Icons\u.jfif" />
-    <Resource Include="View\UserControls\Icons\untap.jfif" />
+    <Resource Include="View\UserControls\Icons\ub.jfif" />
+    <Resource Include="View\UserControls\Icons\q.jfif" />
+    <Resource Include="View\UserControls\Icons\up.jfif" />
+    <Resource Include="View\UserControls\Icons\ur.jfif" />
     <Resource Include="View\UserControls\Icons\w.jfif" />
+    <Resource Include="View\UserControls\Icons\wb.jfif" />
+    <Resource Include="View\UserControls\Icons\wp.jfif" />
+    <Resource Include="View\UserControls\Icons\wu.jfif" />
     <Resource Include="View\UserControls\Icons\x.jfif" />
   </ItemGroup>
 

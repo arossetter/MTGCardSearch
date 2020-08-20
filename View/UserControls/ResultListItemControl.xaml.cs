@@ -64,7 +64,8 @@ namespace MTGCardSearch.View.UserControls
                 {
                     if (!string.IsNullOrWhiteSpace(icon))
                     {
-                        iconList.Add(string.Format(iconString, icon));
+                        string iconClean = icon.Replace("/", "");
+                        iconList.Add(string.Format(iconString, iconClean));
                     }
                 }
             }
