@@ -8,7 +8,8 @@
         xmlns:uc="clr-namespace:MTGCardSearch.View.UserControls"
         mc:Ignorable="d"
         Title="Magic the Gathering Card Search" Height="550" Width="800"
-        Icon="/View/MTGIcon.ico">
+        Icon="/View/MTGIcon.ico"
+        Background="WhiteSmoke">
 
     <Window.Resources>
         <vm:CardSearchVM x:Key="vm"/>
