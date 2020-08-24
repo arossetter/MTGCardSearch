@@ -136,8 +136,21 @@
             <ScrollViewer Grid.Column="2"
                           Margin="2.5, 5, 5, 5">
                 <StackPanel Margin="0, 0, 5, 0">
-                    <Image Source="{Binding CardImageUrl}"
-                           Width="211"/>
+                    <Grid Width="211">
+                        <Image Source="/View/Archangel.jfif"
+                               RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <ScaleTransform ScaleX="0.0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                        <Image Source="/View/MTGCardBack.png"
+                               RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <ScaleTransform ScaleX="1.0"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Grid>
+                    
                     <TextBlock Text="{Binding SelectedCard.name}"
                                FontSize="14"
                                FontWeight="Bold"/>
