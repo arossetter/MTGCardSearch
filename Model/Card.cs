@@ -30,6 +30,7 @@ namespace MTGCardSearch.Model
         public string rarity { get; set; }
         public string set { get; set; }
         public string text { get; set; }
+        public string flavor { get; set; }
         public string artist { get; set; }
         public string number { get; set; }
         public string power { get; set; }

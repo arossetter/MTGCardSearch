@@ -137,14 +137,15 @@
                           Margin="2.5, 5, 5, 5">
                 <StackPanel Margin="0, 0, 5, 0">
                     <Grid Width="211">
-                        <Image Source="/View/Archangel.jfif"
+                        <Image Source="{Binding CardImageUrl}"
                                RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
-                                <ScaleTransform ScaleX="0.0"/>
+                                <ScaleTransform ScaleX="1.0"/>
                             </Image.RenderTransform>
                         </Image>
                         <Image Source="/View/MTGCardBack.png"
-                               RenderTransformOrigin="0.5,0.5">
+                               RenderTransformOrigin="0.5,0.5"
+                               Visibility="Collapsed">
                             <Image.RenderTransform>
                                 <ScaleTransform ScaleX="1.0"/>
                             </Image.RenderTransform>
@@ -158,6 +159,10 @@
                                FontSize="11"
                                FontWeight="Bold"/>
                     <TextBlock Text="{Binding SelectedCard.text}"
+                               TextWrapping="Wrap"
+                               Margin="0, 5"/>
+                    <TextBlock Text="{Binding SelectedCard.flavor}"
+                               FontStyle="Italic"
                                TextWrapping="Wrap"
                                Margin="0, 5"/>
                 </StackPanel>
