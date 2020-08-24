@@ -28,24 +28,102 @@
                 <ColumnDefinition Width="265"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0"
+            <DockPanel Grid.Column="0"
                     Margin="5, 5, 2.5, 0">
-                <TextBlock Text="Search for a card by name:"/>
-                <TextBox Text="{Binding Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                    <TextBox.InputBindings>
-                        <KeyBinding Command="{Binding SearchCommand}"
-                                    CommandParameter="{Binding Query}"
+                <DockPanel DockPanel.Dock="Top"
+                           Margin="5, 10">
+                    <TextBlock Text="Card name:"
+                               Margin="0, 0, 5, 0"/>
+                    <TextBox Text="{Binding CardName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             HorizontalAlignment="Stretch">
+                        <TextBox.InputBindings>
+                            <KeyBinding Command="{Binding SearchCommand}"
+                                    CommandParameter="{Binding CardName}"
                                     Key="Return"/>
-                    </TextBox.InputBindings>
-                </TextBox>
-                <Button Margin="0, 10"
+                        </TextBox.InputBindings>
+                    </TextBox>
+                </DockPanel>
+                
+                
+                <GroupBox Header="Advanced Search"
+                          Margin="3, 15"
+                          DockPanel.Dock="Top">
+                    <StackPanel>
+                        <TextBlock Text="Colors:"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/View/UserControls/Icons/w.jfif" 
+                                   Width="20"
+                                   Margin="0, 0, 5, 0"/>
+                            <CheckBox IsChecked="{Binding HasWhite}"
+                                      VerticalAlignment="Center"
+                                      Margin="0, 0, 7, 0"/>
+                            <Image Source="/View/UserControls/Icons/u.jfif" 
+                                   Width="20"
+                                   Margin="0, 0, 5, 0"/>
+                            <CheckBox IsChecked="{Binding HasBlue}"
+                                      VerticalAlignment="Center"
+                                      Margin="0, 0, 7, 0"/>
+                            <Image Source="/View/UserControls/Icons/b.jfif" 
+                                   Width="20"
+                                   Margin="0, 0, 5, 0"/>
+                            <CheckBox IsChecked="{Binding HasBlack}"
+                                      VerticalAlignment="Center"
+                                      Margin="0, 0, 7, 0"/>
+                            <Image Source="/View/UserControls/Icons/r.jfif" 
+                                   Width="20"
+                                   Margin="0, 0, 5, 0"/>
+                            <CheckBox IsChecked="{Binding HasRed}"
+                                      VerticalAlignment="Center"
+                                      Margin="0, 0, 7, 0"/>
+                            <Image Source="/View/UserControls/Icons/g.jfif" 
+                                   Width="20"
+                                   Margin="0, 0, 5, 0"/>
+                            <CheckBox IsChecked="{Binding HasGreen}"
+                                      VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <DockPanel Margin="0, 10, 0, 0">
+                            <TextBlock Text="Type:"
+                                       Margin="0, 0, 5, 0"/>
+                            <ComboBox SelectedValue="{Binding CardType}"
+                                      SelectedValuePath="Content">
+                                <ComboBoxItem Content=""/>
+                                <ComboBoxItem Content="Artifact"/>
+                                <ComboBoxItem Content="Conspiracy"/>
+                                <ComboBoxItem Content="Creature"/>
+                                <ComboBoxItem Content="Enchantment"/>
+                                <ComboBoxItem Content="Instant"/>
+                                <ComboBoxItem Content="Land"/>
+                                <ComboBoxItem Content="Phenomenon"/>
+                                <ComboBoxItem Content="Plane"/>
+                                <ComboBoxItem Content="Planeswalker"/>
+                                <ComboBoxItem Content="Scheme"/>
+                                <ComboBoxItem Content="Sorcery"/>
+                                <ComboBoxItem Content="Tribal"/>
+                                <ComboBoxItem Content="Vanguard"/>
+                            </ComboBox>
+                        </DockPanel>
+                        <DockPanel Margin="0, 10, 0, 0">
+                            <TextBlock Text="CMC:"
+                                       Margin="0, 0, 5, 0"/>
+                            <TextBox Width="35" 
+                                     HorizontalAlignment="Left"
+                                     Text="{Binding CMC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     PreviewTextInput="TextBox_PreviewTextInput"
+                                     DataObject.Pasting="TextBox_Pasting"/>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <Button Margin="5, 10, 5, 5"
+                        DockPanel.Dock="Bottom"
+                        Height="22"
                     Content="Search"
                     Command="{Binding SearchCommand}"
-                    CommandParameter="{Binding Query}"/>
-            </StackPanel>
+                    CommandParameter="{Binding CardName}" VerticalAlignment="Bottom"/>
+            </DockPanel>
 
             <ListView Grid.Column="1"
-                      Margin="2.5, 5, 2.5, 0"
+                      Margin="2.5, 5, 2.5, 5"
                       ItemsSource="{Binding Cards}"
                       SelectedValue="{Binding SelectedCard}">
                 <ListView.ItemTemplate>
@@ -56,8 +134,7 @@
             </ListView>
 
             <ScrollViewer Grid.Column="2"
-                          HorizontalAlignment="Right"
-                          Margin="2.5, 5, 5, 0">
+                          Margin="2.5, 5, 5, 5">
                 <StackPanel Margin="0, 0, 5, 0">
                     <Image Source="{Binding CardImageUrl}"
                            Width="211"/>

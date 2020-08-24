@@ -18,19 +18,97 @@ namespace MTGCardSearch.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         #region Public Properties
-        private string query;
-        public string Query
+        private string cardname;
+        public string CardName
         {
-            get { return query; }
+            get { return cardname; }
             set 
             { 
-                query = value;
-                OnPropertyChanged("Query");
+                cardname = value;
+                OnPropertyChanged("CardName");
             }
         }
 
-        private string statusBarText;
+        private bool hasWhite;
+        public bool HasWhite
+        {
+            get { return hasWhite; }
+            set 
+            { 
+                hasWhite = value;
+                OnPropertyChanged("HasWhite");
+            }
+        }
 
+        private bool hasBlue;
+        public bool HasBlue
+        {
+            get { return hasBlue; }
+            set
+            {
+                hasBlue = value;
+                OnPropertyChanged("HasBlue");
+            }
+        }
+
+        private bool hasBlack;
+        public bool HasBlack
+        {
+            get { return hasBlack; }
+            set
+            {
+                hasBlack = value;
+                OnPropertyChanged("HasBlack");
+            }
+        }
+
+        private bool hasRed;
+        public bool HasRed
+        {
+            get { return hasRed; }
+            set
+            {
+                hasRed = value;
+                OnPropertyChanged("HasRed");
+            }
+        }
+
+        private bool hasGreen;
+        public bool HasGreen
+        {
+            get { return hasGreen; }
+            set
+            {
+                hasGreen = value;
+                OnPropertyChanged("HasGreen");
+            }
+        }
+
+
+        private string cardType;
+        public string CardType
+        {
+            get { return cardType; }
+            set 
+            { 
+                cardType = value;
+                OnPropertyChanged("CardType");
+            }
+        }
+
+        private string cmc;
+        public string CMC
+        {
+            get { return cmc; }
+            set 
+            { 
+                cmc = value;
+                OnPropertyChanged("CMC");
+            }
+        }
+
+
+        private string statusBarText;
         public string StatusBarText
         {
             get { return statusBarText; }
@@ -90,7 +168,17 @@ namespace MTGCardSearch.ViewModel
         public async void MakeQuery()
         {
             StatusBarText = "Querying MTG Database...";
-            var cards = await MagicAPIHelper.GetCards(Query);
+            var cards = await MagicAPIHelper.GetCards(new CardQuery
+            {
+                cardName = CardName,
+                cmc = CMC,
+                cardType = CardType,
+                isWhite = HasWhite,
+                isBlue = HasBlue,
+                isBlack = HasBlack,
+                isRed = HasRed,
+                isGreen = HasGreen
+            });
 
             Cards.Clear();
             foreach(Card card in cards.cards)
